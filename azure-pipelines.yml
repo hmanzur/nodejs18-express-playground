@@ -11,8 +11,8 @@ pool:
   vmImage: ubuntu-latest
 
 steps: 
- - task: AzureContainerApps@1
-   inputs:
+- task: AzureContainerApps@1
+  inputs:
     appSourcePath: $(Build.SourcesDirectory)
     azureSubscription: $(ARM_SUBSCRIPTION_ID)
     acrName: habipandabackendapp
