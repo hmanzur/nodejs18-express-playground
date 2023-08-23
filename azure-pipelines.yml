@@ -12,9 +12,9 @@ pool:
 
 steps: 
  - task: AzureContainerApps@1
-    inputs:
-      appSourcePath: $(Build.SourcesDirectory)
-      azureSubscription: $(ARM_SUBSCRIPTION_ID)
-      acrName: habipandabackendapp
-      containerAppName: backend-app
-      resourceGroup: Panda-ResourceGroup
+   inputs:
+    appSourcePath: $(Build.SourcesDirectory)
+    azureSubscription: $(ARM_SUBSCRIPTION_ID)
+    acrName: habipandabackendapp
+    containerAppName: backend-app
+    resourceGroup: Panda-ResourceGroup
