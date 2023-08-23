@@ -1,0 +1,20 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+# Terraform task https://marketplace.visualstudio.com/items?itemName=charleszipp.azure-pipelines-tasks-terraform
+# https://learn.microsoft.com/es-es/azure/devops/pipelines/library/connect-to-azure?view=azure-devops&WT.mc_id=AZ-MVP-5004321
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps: 
+ - task: AzureContainerApps@1
+    inputs:
+      appSourcePath: $(Build.SourcesDirectory)
+      azureSubscription: $(ARM_SUBSCRIPTION_ID)
+      acrName: habipandabackendapp
+      containerAppName: backend-app
+      resourceGroup: Panda-ResourceGroup
